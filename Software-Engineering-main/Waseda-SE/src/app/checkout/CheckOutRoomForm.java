@@ -1,0 +1,37 @@
+/*
+ * Copyright(C) 2007-2013 National Institute of Informatics, All rights reserved.
+ */
+package app.checkout;
+
+import app.AppException;
+import app.checkin.CheckInRoomControl;
+
+/**
+ * Form class for Check-out Customer
+ * 
+ */
+public class CheckOutRoomForm {
+
+	private CheckOutRoomControl checkOutRoomControl = new CheckOutRoomControl();
+
+	private CheckOutRoomControl getCheckOutRoomControl() {
+		return checkOutRoomControl;
+	}
+
+	private String roomNumber;
+
+	public int checkOut() throws AppException {
+		CheckOutRoomControl checkOutRoomControl = getCheckOutRoomControl();
+		int fee = checkOutRoomControl.checkOut(roomNumber);
+		return fee;
+	}
+
+	public String getRoomNumber() {
+		return roomNumber;
+	}
+
+	public void setRoomNumber(String roomNumber) {
+		this.roomNumber = roomNumber;
+	}
+
+}
